@@ -1,0 +1,29 @@
+.characterCard {
+  margin: 5rem;
+
+  & img {
+    width: 16.4rem;
+    border-radius: 1rem 1rem 0 0;
+  }
+  &_line {
+    background-color: $red;
+    height: 0.3rem;
+    width: 16.4rem;
+  }
+  &_name {
+    color: $red;
+    background-color: white;
+    width: 16.4rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem 0 1rem 0;
+  }
+  &_description {
+    color: grey;
+    background-color: white;
+    width: 15rem;
+    border-radius: 0 0 1rem 1rem;
+    text-align: justify;
+    padding: 0 0.7rem 0.7rem 0.7rem;
+  }
+}
