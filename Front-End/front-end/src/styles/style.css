@@ -89,6 +89,14 @@
   margin-left: 5rem;
   margin-bottom: 4rem;
 }
+.characters_specialLine,
+.charactersComics_specialLine {
+  background-color: white;
+  height: 0.3rem;
+  width: 30rem;
+  margin-left: 5rem;
+  margin-bottom: 4rem;
+}
 .characters_display,
 .charactersComics_display {
   display: flex;

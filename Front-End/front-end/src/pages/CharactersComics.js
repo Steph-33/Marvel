@@ -31,13 +31,13 @@ export default function CharactersComics() {
     return (
         <div className="charactersComics">
            <Nav/>
-           <div className="characters_title">
+           <div className="charactersComics_title">
                 <p style={{color : '#ef2c1f'}}>ALL</p>
                 <p style={{color : 'white'}}>{location.state.characterName}'S</p>
                 <p style={{color : 'white'}}>COMICS</p>
             </div>
-            <div className="characters_line"></div>
-           <div className="comics_display">
+            <div className="charactersComics_specialLine"></div>
+           <div className="charactersComics_display">
                 {charactersComics.map((comic, index) => (
                 <div key={index}>
                     <ComicCard comic={comic} />
