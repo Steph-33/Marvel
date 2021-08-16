@@ -1,0 +1,42 @@
+.nav {
+  display: flex;
+  background-color: black;
+  height: 11rem;
+
+  &_logo {
+    margin: 5rem;
+
+    & img {
+      width: 10rem;
+    }
+  }
+  &_links {
+    margin-top: 7rem;
+    &_characters,
+    &_comics,
+    &_favorites {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      margin-right: 2rem;
+    }
+  }
+  &_connection {
+    margin-top: 7rem;
+    margin-left: 20rem;
+    &_login {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      margin: 2rem;
+    }
+    & button {
+      background-color: $red;
+      color: white;
+      font-weight: bold;
+      width: 6rem;
+      border-radius: 2rem;
+      padding: 0.2rem 0 0.2rem 0;
+    }
+  }
+}

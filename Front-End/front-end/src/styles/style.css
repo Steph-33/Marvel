@@ -1,3 +1,42 @@
+.nav {
+  display: flex;
+  background-color: black;
+  height: 11rem;
+}
+.nav_logo {
+  margin: 5rem;
+}
+.nav_logo img {
+  width: 10rem;
+}
+.nav_links {
+  margin-top: 7rem;
+}
+.nav_links_characters, .nav_links_comics, .nav_links_favorites {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin-right: 2rem;
+}
+.nav_connection {
+  margin-top: 7rem;
+  margin-left: 20rem;
+}
+.nav_connection_login {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin: 2rem;
+}
+.nav_connection button {
+  background-color: #ef2c1f;
+  color: white;
+  font-weight: bold;
+  width: 6rem;
+  border-radius: 2rem;
+  padding: 0.2rem 0 0.2rem 0;
+}
+
 body {
   margin: 0;
   padding: 0;
