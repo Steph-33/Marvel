@@ -48,39 +48,79 @@
   padding: 1rem 0 1rem 0;
 }
 
-.characters {
+.characters,
+.charactersComics {
   background-color: black;
 }
-.characters_title {
+.characters_title,
+.charactersComics_title {
   display: flex;
   margin-left: 5rem;
 }
-.characters_title p {
+.characters_title p,
+.charactersComics_title p {
   margin-right: 0.5rem;
   font-weight: bold;
   font-size: x-large;
 }
-.characters_line {
+.characters_line,
+.charactersComics_line {
   background-color: white;
   height: 0.3rem;
   width: 20rem;
   margin-left: 5rem;
   margin-bottom: 4rem;
 }
-
-.characterCard {
-  margin: 5rem;
+.characters_display,
+.charactersComics_display {
+  display: flex;
+  flex-wrap: wrap;
 }
-.characterCard img {
+
+.comics {
+  background-color: black;
+}
+.comics_title {
+  display: flex;
+  margin-left: 5rem;
+}
+.comics_title p {
+  margin-right: 0.5rem;
+  font-weight: bold;
+  font-size: x-large;
+}
+.comics_line {
+  background-color: white;
+  height: 0.3rem;
+  width: 20rem;
+  margin-left: 5rem;
+  margin-bottom: 4rem;
+}
+.comics_display {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.characterCard,
+.comicCard {
+  margin: 5rem;
+  cursor: pointer;
+}
+.characterCard img,
+.comicCard img {
   width: 16.4rem;
+  height: 18rem;
   border-radius: 1rem 1rem 0 0;
 }
-.characterCard_line {
+.characterCard_line,
+.comicCard_line {
   background-color: #ef2c1f;
   height: 0.3rem;
   width: 16.4rem;
 }
-.characterCard_name {
+.characterCard_name, .characterCard_title,
+.comicCard_name,
+.comicCard_title {
   color: #ef2c1f;
   background-color: white;
   width: 16.4rem;
@@ -88,7 +128,8 @@
   text-align: center;
   padding: 1rem 0 1rem 0;
 }
-.characterCard_description {
+.characterCard_description,
+.comicCard_description {
   color: grey;
   background-color: white;
   width: 15rem;

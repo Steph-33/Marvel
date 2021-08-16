@@ -1,8 +1,11 @@
-.characterCard {
+.characterCard,
+.comicCard {
   margin: 5rem;
+  cursor: pointer;
 
   & img {
     width: 16.4rem;
+    height: 18rem;
     border-radius: 1rem 1rem 0 0;
   }
   &_line {
@@ -10,7 +13,8 @@
     height: 0.3rem;
     width: 16.4rem;
   }
-  &_name {
+  &_name,
+  &_title {
     color: $red;
     background-color: white;
     width: 16.4rem;

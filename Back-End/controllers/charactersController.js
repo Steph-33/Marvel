@@ -70,7 +70,7 @@ module.exports = {
             })
             .catch(() => {
                 return response.status(404).json({
-                    error: `Les personnages n'ont pas pu être récupérés.`
+                    error: `Les comics de ce personnage n'ont pas pu être récupérés.`
                 })
             })
         return response.status(200).json(result);

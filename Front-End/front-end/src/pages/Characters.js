@@ -30,7 +30,7 @@ export default function Characters() {
                 <p style={{color : 'white'}}>CHARACTERS</p>
             </div>
             <div className="characters_line"></div>
-            <div>
+            <div className="characters_display">
                 {allCharacters.map((character, index) => (
                 <div key={index}>
                     <CharacterCard character={character} />
