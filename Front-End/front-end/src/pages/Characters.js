@@ -28,6 +28,7 @@ export default function Characters() {
             <div className="characters_title">
                 <p style={{color : '#ef2c1f'}}>ALL</p>
                 <p style={{color : 'white'}}>CHARACTERS</p>
+                <input placeholder="Entrez le nom d'un personnage"/>
             </div>
             <div className="characters_line"></div>
             <div className="characters_display">

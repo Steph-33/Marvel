@@ -19,6 +19,10 @@
       color: white;
       font-weight: bold;
       margin-right: 2rem;
+
+      &:hover {
+        color: $red;
+      }
     }
   }
   &_connection {
@@ -29,6 +33,9 @@
       color: white;
       font-weight: bold;
       margin: 2rem;
+      &:hover {
+        color: $red;
+      }
     }
     & button {
       background-color: $red;
@@ -37,6 +44,10 @@
       width: 6rem;
       border-radius: 2rem;
       padding: 0.2rem 0 0.2rem 0;
+      &:hover {
+        background-color: white;
+        color: $red;
+      }
     }
   }
 }

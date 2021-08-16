@@ -28,6 +28,7 @@ export default function Comics() {
             <div className="comics_title">
                 <p style={{color : '#ef2c1f'}}>ALL</p>
                 <p style={{color : 'white'}}>COMICS</p>
+                <input placeholder="Entrez le titre d'un comic"/>
             </div>
             <div className="comics_line"></div>
             <div className="comics_display">

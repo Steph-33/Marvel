@@ -18,6 +18,9 @@
   font-weight: bold;
   margin-right: 2rem;
 }
+.nav_links_characters:hover, .nav_links_comics:hover, .nav_links_favorites:hover {
+  color: #ef2c1f;
+}
 .nav_connection {
   margin-top: 7rem;
   margin-left: 20rem;
@@ -28,6 +31,9 @@
   font-weight: bold;
   margin: 2rem;
 }
+.nav_connection_login:hover {
+  color: #ef2c1f;
+}
 .nav_connection button {
   background-color: #ef2c1f;
   color: white;
@@ -35,6 +41,10 @@
   width: 6rem;
   border-radius: 2rem;
   padding: 0.2rem 0 0.2rem 0;
+}
+.nav_connection button:hover {
+  background-color: white;
+  color: #ef2c1f;
 }
 
 .footer {
@@ -63,6 +73,14 @@
   font-weight: bold;
   font-size: x-large;
 }
+.characters_title input,
+.charactersComics_title input {
+  margin-top: 1.5rem;
+  margin-left: 35rem;
+  width: 20rem;
+  height: 2rem;
+  border-radius: 1rem;
+}
 .characters_line,
 .charactersComics_line {
   background-color: white;
@@ -88,6 +106,13 @@
   margin-right: 0.5rem;
   font-weight: bold;
   font-size: x-large;
+}
+.comics_title input {
+  margin-top: 1.5rem;
+  margin-left: 40rem;
+  width: 20rem;
+  height: 2rem;
+  border-radius: 1rem;
 }
 .comics_line {
   background-color: white;
