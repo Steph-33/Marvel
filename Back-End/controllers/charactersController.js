@@ -16,9 +16,6 @@ module.exports = {
             .then(async (res) => {
                 let character = await res.json();
                 return await response.status(200).json({
-                    // id: characterFound.id,
-                    // nom: characterFound.name,
-                    // description: characterFound.description,
                     character
                 })
             })
@@ -37,7 +34,7 @@ module.exports = {
         console.log(Math.floor(timestamp)); // va afficher qqchose comme 1582129584.
         const hash = md5(timestamp + process.env.API_PRIVATE_KEY + process.env.API_PUBLIC_KEY)
         console.log('hash', hash);
-        const url = `https://gateway.marvel.com:443/v1/public/characters?ts=${timestamp}&apikey=${process.env.API_PUBLIC_KEY}&hash=${hash}`;
+        const url = `https://gateway.marvel.com:443/v1/public/characters?limit=100&ts=${timestamp}&apikey=${process.env.API_PUBLIC_KEY}&hash=${hash}`;
 
         const result = await fetch(url)
             .then(async (res) => {
@@ -61,7 +58,7 @@ module.exports = {
         console.log(Math.floor(timestamp)); // va afficher qqchose comme 1582129584.
         const hash = md5(timestamp + process.env.API_PRIVATE_KEY + process.env.API_PUBLIC_KEY)
         console.log('hash', hash);
-        const url = `https://gateway.marvel.com:443/v1/public/characters/${request.params.id}/comics?ts=${timestamp}&apikey=${process.env.API_PUBLIC_KEY}&hash=${hash}`;
+        const url = `https://gateway.marvel.com:443/v1/public/characters/${request.params.id}/comics?limit=100&ts=${timestamp}&apikey=${process.env.API_PUBLIC_KEY}&hash=${hash}`;
 
         const result = await fetch(url)
             .then(async (res) => {

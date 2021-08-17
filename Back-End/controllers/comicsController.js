@@ -16,9 +16,6 @@ module.exports = {
             .then(async (res) => {
                 let comic = await res.json();
                 return await response.status(200).json({
-                    // id: comicFound.id,
-                    // nom: comicFound.name,
-                    // description: comicFound.description,
                     comic
                 })
             })
@@ -36,7 +33,7 @@ module.exports = {
         // secondes
         const hash = md5(timestamp + process.env.API_PRIVATE_KEY + process.env.API_PUBLIC_KEY)
         console.log('hash', hash);
-        const url = `https://gateway.marvel.com:443/v1/public/comics?ts=${timestamp}&apikey=${process.env.API_PUBLIC_KEY}&hash=${hash}`;
+        const url = `https://gateway.marvel.com:443/v1/public/comics?limit=100&ts=${timestamp}&apikey=${process.env.API_PUBLIC_KEY}&hash=${hash}`;
         const result = await fetch(url)
 
             .then(async (res) => {

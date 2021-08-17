@@ -3,6 +3,7 @@ import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import axios from 'axios';
 import CharacterCard from '../components/CharacterCard';
+import Pagination from '../components/Pagination.jsx';
 
 export default function Characters() {
     const [allCharacters, setAllCharacters] = useState([]);
@@ -31,6 +32,7 @@ export default function Characters() {
                 <input placeholder="Entrez le nom d'un personnage"/>
             </div>
             <div className="characters_line"></div>
+            <Pagination items={allCharacters}/>
             <div className="characters_display">
                 {allCharacters.map((character, index) => (
                 <div key={index}>
