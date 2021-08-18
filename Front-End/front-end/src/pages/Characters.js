@@ -91,19 +91,38 @@ export default function Characters() {
     };
     /////// Fin pagination
 
+
+    /////// Méthode SearchBar
+    const [searchCharacter, setSearchCharacter] = useState("");
+
+    const handleSearchTerm = (event) => {
+        let value = event.target.value;
+        setSearchCharacter(value);
+    };
+    /////// Fin Méthode SearchBar
+
+    
     return (
         <div className="characters">
             <Nav/>
             <div className="characters_title">
                 <p style={{color : '#ef2c1f'}}>ALL</p>
                 <p style={{color : 'white'}}>CHARACTERS</p>
-                <input placeholder="Entrez le nom d'un personnage"/>
+                <input 
+                type="text"
+                name="searchBar"
+                id="searchBar"
+                placeholder="Entrez le nom d'un personnage"
+                onChange={handleSearchTerm}
+                />
             </div>
             <div className="characters_line"></div>
             <div className="characters_display">
-                {currentItems.map((character, index) => (
+                {currentItems.filter((val) => {
+                    return val.name.toLowerCase().includes(searchCharacter.toLocaleLowerCase())
+                }).map((val, index) => (
                 <div key={index}>
-                    <CharacterCard character={character} />
+                    <CharacterCard character={val} />
                 </div>
                 ))}
             </div>

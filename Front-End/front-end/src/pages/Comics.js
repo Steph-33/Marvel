@@ -91,7 +91,6 @@ export default function Comics() {
     };
     /////// Fin pagination
 
-
     return (
         <div className="comics">
             <Nav/>
