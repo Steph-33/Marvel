@@ -91,19 +91,36 @@ export default function Comics() {
     };
     /////// Fin pagination
 
+    /////// Méthode SearchBar
+    const [searchComic, setSearchComic] = useState("");
+
+    const handleSearchTerm = (event) => {
+        let value = event.target.value;
+        setSearchComic(value);
+    };
+    /////// Fin Méthode SearchBar
+
     return (
         <div className="comics">
             <Nav/>
             <div className="comics_title">
                 <p style={{color : '#ef2c1f'}}>ALL</p>
                 <p style={{color : 'white'}}>COMICS</p>
-                <input placeholder="Entrez le titre d'un comic"/>
+                <input
+                type="text"
+                name="searchBar"
+                id="searchBar"
+                placeholder="Entrez le titre d'un comic"
+                onChange={handleSearchTerm}
+                />
             </div>
             <div className="comics_line"></div>
             <div className="comics_display">
-                {currentItems.map((comic, index) => (
+                {currentItems.filter((val) => {
+                    return val.title.toLowerCase().includes(searchComic.toLocaleLowerCase())
+                    }).map((val, index) => (
                 <div key={index}>
-                    <ComicCard comic={comic} />
+                    <ComicCard comic={val} />
                 </div>
                 ))}
             </div>
