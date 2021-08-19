@@ -14,8 +14,6 @@ export default function Comics() {
             'http://localhost:8080/api/comics/'
             );
             setAllComics(response.data.data.results);
-
-            console.log('response =======>', response)
         } catch (error) {
             console.error(error);
         }
@@ -117,7 +115,7 @@ export default function Comics() {
             <div className="comics_line"></div>
             <div className="comics_display">
                 {currentItems.filter((val) => {
-                    return val.title.toLowerCase().includes(searchComic.toLocaleLowerCase())
+                    return val.title.toLowerCase().includes(searchComic.toLowerCase())
                     }).map((val, index) => (
                 <div key={index}>
                     <ComicCard comic={val} />

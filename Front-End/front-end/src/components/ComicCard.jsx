@@ -1,17 +1,28 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 
 export default function ComicCard(comic) {
-    console.log('comic===========>',comic)
-    
+    const [heart, setHeart] = useState(true)
+
+    const toggleImage = () =>{
+        setHeart(!heart);
+    }
+        
     return (
         <div>
+            <img
+                className = "heart" 
+                src={heart ? 'assets/images/empty_heart.png' : 'assets/images/red_heart.png'}
+                alt="favorites"
+                onClick={toggleImage}
+            />
             <Link
                 to={`/comics/${comic.id}`}
                 style={{ textDecoration: 'none' }}
             >
                 <div className="comicCard">
                     <img
+                    className="comicCard_image"
                     src={`${comic.comic.thumbnail.path}.${comic.comic.thumbnail.extension}`}
                     alt="comic"
                     />

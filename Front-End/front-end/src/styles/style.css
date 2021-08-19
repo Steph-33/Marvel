@@ -59,22 +59,26 @@
 }
 
 .characters,
-.charactersComics {
+.charactersComics,
+.favorites {
   background-color: black;
 }
 .characters_title,
-.charactersComics_title {
+.charactersComics_title,
+.favorites_title {
   display: flex;
   margin-left: 5rem;
 }
 .characters_title p,
-.charactersComics_title p {
+.charactersComics_title p,
+.favorites_title p {
   margin-right: 0.5rem;
   font-weight: bold;
   font-size: x-large;
 }
 .characters_title input,
-.charactersComics_title input {
+.charactersComics_title input,
+.favorites_title input {
   margin-top: 1.5rem;
   margin-left: 35rem;
   width: 20rem;
@@ -82,7 +86,8 @@
   border-radius: 1rem;
 }
 .characters_line,
-.charactersComics_line {
+.charactersComics_line,
+.favorites_line {
   background-color: white;
   height: 0.3rem;
   width: 20rem;
@@ -90,7 +95,8 @@
   margin-bottom: 4rem;
 }
 .characters_specialLine,
-.charactersComics_specialLine {
+.charactersComics_specialLine,
+.favorites_specialLine {
   background-color: white;
   height: 0.3rem;
   width: 30rem;
@@ -98,7 +104,8 @@
   margin-bottom: 4rem;
 }
 .characters_display,
-.charactersComics_display {
+.charactersComics_display,
+.favorites_display {
   display: flex;
   flex-wrap: wrap;
 }
@@ -139,8 +146,8 @@
   margin: 5rem;
   cursor: pointer;
 }
-.characterCard img,
-.comicCard img {
+.characterCard_image,
+.comicCard_image {
   width: 16.4rem;
   height: 18rem;
   border-radius: 1rem 1rem 0 0;
@@ -169,6 +176,15 @@
   border-radius: 0 0 1rem 1rem;
   text-align: justify;
   padding: 0 0.7rem 0.7rem 0.7rem;
+}
+
+.heart {
+  background-color: transparent;
+  width: 1.5rem;
+  position: absolute;
+  margin-left: 19rem;
+  margin-top: 1rem;
+  cursor: pointer;
 }
 
 .pageNumbers {

@@ -3,7 +3,7 @@
   margin: 5rem;
   cursor: pointer;
 
-  & img {
+  &_image {
     width: 16.4rem;
     height: 18rem;
     border-radius: 1rem 1rem 0 0;
@@ -13,6 +13,7 @@
     height: 0.3rem;
     width: 16.4rem;
   }
+
   &_name,
   &_title {
     color: $red;
@@ -30,4 +31,13 @@
     text-align: justify;
     padding: 0 0.7rem 0.7rem 0.7rem;
   }
+}
+
+.heart {
+  background-color: transparent;
+  width: 1.5rem;
+  position: absolute;
+  margin-left: 19rem;
+  margin-top: 1rem;
+  cursor: pointer;
 }
