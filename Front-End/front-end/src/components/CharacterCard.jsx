@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 
 export default function CharacterCard(character) {
@@ -30,10 +30,15 @@ export default function CharacterCard(character) {
                 addArray = false;
             }
         });
-
+    /////////// Push des id dans le tableau favorites sur le localStorage /////////////////
+    ////////// Problème : le tableau de réinitialise à chaque push //////////////    
         if(addArray){
-            array.push(props.i);
+            array.push(props.character.id);
         }
+        setFavorites([...array]);
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+
+    /////////// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ /////////////////////
         
         var storage = localStorage.getItem(`Favorite Item ${props.character.id}` || '0');
         if (storage == null) {
@@ -42,7 +47,14 @@ export default function CharacterCard(character) {
         else{
             localStorage.removeItem(`Favorite Item ${props.character.id}`);
         }
-    }
+    };
+
+    // const getArray = JSON.parse(localStorage.getItem('favorites') || '0');
+    // useEffect(() => {
+    //     if(getArray !== 0){
+    //         setFavorites([...getArray]);
+    //     }
+    // }, []);
 
     return (
         <div>

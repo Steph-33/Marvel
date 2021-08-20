@@ -4,14 +4,13 @@ import Footer from '../components/Footer';
 import CharacterCard from '../components/CharacterCard';
 
 export default function Favorites() {
-    
     var favList = [{}];
     const getArray = JSON.parse(localStorage.getItem('favorites') || '0');
     for (let i = 0 ; i < getArray.length ; i++){
         let x = getArray[i];
         favList[i] = JSON.parse(localStorage.getItem(`Favorite Item ${[x]}`) || '');
     }
-
+    
     return (
         <div className="favorites">
             <Nav/>
@@ -21,9 +20,13 @@ export default function Favorites() {
             </div>
             <div className="favorites_line"></div>
             <div className="favorites_display">
-                {favList.map((val, index) => (
-                <div key={index}>
-                    {/* <CharacterCard character={val} /> */}
+                {favList.map((items, i) => (
+                <div key={i}>
+                    {(Object.values(favList[i])).map((value, key)=> 
+                    <div key={key}>
+                        <CharacterCard character={value} />
+                    </div>
+                    )}
                 </div>
                 ))}
             </div>
