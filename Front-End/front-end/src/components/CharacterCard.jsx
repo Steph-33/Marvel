@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom';
+import {IoIosHeart, IoIosHeartEmpty} from 'react-icons/io'
 
 export default function CharacterCard(character) {
     const [heart, setHeart] = useState(true);
@@ -13,13 +14,13 @@ export default function CharacterCard(character) {
         }});
     };
 
-    const pushCharacterInLocalStorage = (props) => {
+    const addFav = (props) => {
         
         // Méthode pour changer la couleur du coeur
-        const toggleImage = () =>{
-            setHeart(!heart);
-        };
-        toggleImage();
+        // const toggleImage = () =>{
+        //     setHeart(!heart);
+        // };
+        // toggleImage();
 
         // Code pour pousser les infos dans le localStorage
         let array = favorites;
@@ -31,7 +32,7 @@ export default function CharacterCard(character) {
             }
         });
     /////////// Push des id dans le tableau favorites sur le localStorage /////////////////
-    ////////// Problème : le tableau de réinitialise à chaque push //////////////    
+    ////////// Problème : le tableau se réinitialise à chaque push //////////////    
         if(addArray){
             array.push(props.character.id);
         }
@@ -58,12 +59,27 @@ export default function CharacterCard(character) {
 
     return (
         <div>
-            <img
+            {/* <img
                 className = "heart" 
                 src={heart ? 'assets/images/empty_heart.png' : 'assets/images/red_heart.png'}
                 alt="favorites"
                 onClick={() => pushCharacterInLocalStorage(character)} 
-            />
+            /> */}
+            <div  >
+                {favorites.includes(character.character.id) ? (
+                    <IoIosHeart
+                    className="heart"
+                    onClick={() => addFav(character)}
+                    style={{color:'red'}}
+                    />
+                ):(
+                    <IoIosHeartEmpty
+                    className="heart"
+                    onClick={() => addFav(character)}
+                    style={{color:'red'}}
+                    />
+                )}
+            </div>
             <div className="characterCard" onClick={() => goToCharactersComics()}>
                 <img
                 className="characterCard_image"

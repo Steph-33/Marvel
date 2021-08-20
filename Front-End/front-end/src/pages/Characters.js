@@ -15,7 +15,6 @@ export default function Characters() {
             );
             setAllCharacters(response.data.data.results);
 
-            console.log('response =======>', response)
         } catch (error) {
             console.error(error);
         }
