@@ -62,6 +62,7 @@
 .charactersComics,
 .favorites {
   background-color: black;
+  min-height: 100vh;
 }
 .characters_title,
 .charactersComics_title,

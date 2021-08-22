@@ -2,6 +2,7 @@
 .charactersComics,
 .favorites {
   background-color: black;
+  min-height: 100vh;
 
   &_title {
     display: flex;

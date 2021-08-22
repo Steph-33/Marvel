@@ -50,13 +50,6 @@ export default function CharacterCard(character) {
         }
     };
 
-    // const getArray = JSON.parse(localStorage.getItem('favorites') || '0');
-    // useEffect(() => {
-    //     if(getArray !== 0){
-    //         setFavorites([...getArray]);
-    //     }
-    // }, []);
-
     return (
         <div>
             {/* <img

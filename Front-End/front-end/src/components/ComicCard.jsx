@@ -1,21 +1,57 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
+import {IoIosHeart, IoIosHeartEmpty} from 'react-icons/io';
 
 export default function ComicCard(comic) {
-    const [heart, setHeart] = useState(true)
+    const [favoriteComics, setFavoriteComics] = useState([]);
 
-    const toggleImage = () =>{
-        setHeart(!heart);
-    }
+    const addFavComic = (props) => {
+        
+        // Code pour pousser les infos dans le localStorage
+        let array = favoriteComics
+        let addArray = true;
+        array.map((item, key) => {
+            if(item === props.comic.id){
+                array.splice(key, 1);
+                addArray = false;
+            }
+        });
+    /////////// Push des id dans le tableau favorites sur le localStorage /////////////////
+    ////////// Problème : le tableau se réinitialise à chaque push //////////////    
+        if(addArray){
+            array.push(props.comic.id);
+        }
+        setFavoriteComics([...array]);
+        localStorage.setItem('favorite comics', JSON.stringify(favoriteComics));
+
+    /////////// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ /////////////////////
+        
+        var storage = localStorage.getItem(`Favorite Item ${props.comic.id}` || '0');
+        if (storage == null) {
+            localStorage.setItem(`Favorite Item ${props.comic.id}`, JSON.stringify(props));
+        } 
+        else{
+            localStorage.removeItem(`Favorite Item ${props.comic.id}`);
+        }
+    };
         
     return (
         <div>
-            {/* <img
-                className = "heart" 
-                src={heart ? 'assets/images/empty_heart.png' : 'assets/images/red_heart.png'}
-                alt="favorites"
-                onClick={toggleImage}
-            /> */}
+            <div  >
+                {favoriteComics.includes(comic.comic.id) ? (
+                    <IoIosHeart
+                    className="heart"
+                    onClick={() => addFavComic(comic)}
+                    style={{color:'red'}}
+                    />
+                ):(
+                    <IoIosHeartEmpty
+                    className="heart"
+                    onClick={() => addFavComic(comic)}
+                    style={{color:'red'}}
+                    />
+                )}
+            </div>
             <Link
                 to={`/comics/${comic.id}`}
                 style={{ textDecoration: 'none' }}
